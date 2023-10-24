@@ -1,0 +1,29 @@
+name: Release Workflow
+
+on:
+  pull_request:
+    branches:
+      - 'main'
+      - 'release'
+jobs:
+  audit:
+    name: Audit application
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18.x"  
+
+      - name: Install project dependencies
+        run: npm install
+
+      - name: Run npm audit
+        run: npm audit
+
+      - name: Check for outdated dependencies
+        run: npm outdated
+        continue-on-error: true 
