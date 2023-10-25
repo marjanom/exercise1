@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install project dependencies
-RUN npm install --omit=dev
+RUN npm install
 
 # Copy the source code into the container
 COPY . .
@@ -30,6 +30,12 @@ COPY --from=builder /app/node_modules ./node_modules
 
 # Expose the port your application listens on (replace with your actual port)
 EXPOSE 3000
+
+# Set port of application
+ENV PORT 3000
+
+# Set hostname to "0.0.0.0"
+ENV HOSTNAME "0.0.0.0"
 
 # Start the Next.js application
 CMD ["npm", "start"]
