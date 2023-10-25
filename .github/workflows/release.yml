@@ -22,5 +22,5 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: marjanom94/exercise1:latest
+          tags: marjanom94/exercise1:tagname
 
