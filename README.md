@@ -37,3 +37,8 @@ pnpm create next-app --example blog my-blog
 ```
 
 Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+
+## Horizontal Pod Autoscaler
+When running the busy box - it can be seen that the CPU limit is reached and the application is scaled to max 5 replicas.
+![image](https://github.com/marjanom/exercise1/assets/58141234/56571fb1-bf5d-48b5-adaa-cd216a83e7cd)
+
